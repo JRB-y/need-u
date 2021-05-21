@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Home",
+    "path": "/",
+    "icon": "mdi-home"
+  },
+  {
+    "title": "Actualités",
+    "path": "/actualite",
+    "icon": "mdi-newspaper"
+  },
+  {
+    "title": "Contact",
+    "path": "/contact",
+    "icon": "mdi-phone"
+  },
+  {
+    "title": "A Propos",
+    "path": "/",
+    "icon": "mdi-chevron-double-down",
+    "children": [
+      {
+        "title": "Qui somme nous ?",
+        "path": "/",
+        "icon": ""
+      },
+      {
+        "title": "Blog",
+        "path": "/",
+        "icon": ""
+      }
+    ]
+  }
+]
