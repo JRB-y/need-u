@@ -66,8 +66,6 @@
       v-for="(slide, i) in homeSliders"
       :key="i"
       :src="slide.src"
-      reverse-transition="fade-transition"
-      transition="fade-transition"
     />
 
   </v-carousel>
