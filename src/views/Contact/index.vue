@@ -72,12 +72,12 @@
       <!-- Si message est envoyé -->
       <v-container v-else>
         <v-col class="mb-5 text-center mt-10">
-          <h1 class="secondary--text">Votre message a été envoyé avec succès</h1>
-          <p>
+          <p class="font-weight-bold secondary--text text--h6">Votre message a été envoyé avec succès</p>
+          <p class="body-1 font-weight-bold">
             On vous contactera très rapidement
           </p>
-          <p>
-            l'équipe <b>Need U</b>
+          <p class="body-2">
+            l'équipe <b>Need U</b> 👌
           </p>
         </v-col>
       </v-container>

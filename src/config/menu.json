@@ -10,11 +10,6 @@
     "icon": "mdi-newspaper"
   },
   {
-    "title": "Contact",
-    "path": "/contact",
-    "icon": "mdi-phone"
-  },
-  {
     "title": "A Propos",
     "path": "/about",
     "icon": "mdi-chevron-double-down",
@@ -30,5 +25,10 @@
         "icon": ""
       }
     ]
+  },
+  {
+    "title": "Contact",
+    "path": "/contact",
+    "icon": "mdi-phone"
   }
 ]

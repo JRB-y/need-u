@@ -4,28 +4,29 @@
       <v-card-title class="gray">
         <v-row>
           <v-col xs="6" md="3" offset-md="1">
-            <span class="legend">Nous contacter</span>
+            <span class="font-weight-bold">Nous contacter</span>
             <v-textarea
-              class="text-area"
+              class="text-area mt-3"
               outlined
               placeholder="Votre message"
               rows="2"
               auto-grow
               color="primary"
             />
-            <v-btn class="primary white--text pa-5" rounded>Envoyer</v-btn>
+            <v-btn class="secondary white--text pa-5 mt-3" small rounded>Envoyer</v-btn>
           </v-col>
 
           <v-col sm="12" md="6" offset-md="2" class="mt-1">
-            <div class="title mb-3">Nos réseaux sociaux</div>
+            <div class="font-weight-bold mb-3">Nos réseaux sociaux</div>
             <v-btn
               v-for="icon in icons"
               :key="icon.name"
-              class="mb-5 mr-3"
-              elevation="0"
+              class="social-icon mb-5 mr-3"
               :href="icon.url"
               target="_blank"
-              color="primary"
+              color="#707070"
+              icon
+              rounded
             >
               <v-icon size="34px">{{ icon.name }}</v-icon>
             </v-btn>

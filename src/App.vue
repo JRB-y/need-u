@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire" dark>
+  <v-app id="need-u-app" :style="{ backgroundColor: $vuetify.theme.dark ? '' : '#f3f3f3' }">
 
     <Drawer />
 
@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style>
+  /* #need-u-app {
+    background: whitesmoke;
+  } */
   .fade-enter-active,
   .fade-leave-active {
     transition-duration: 0.3s;

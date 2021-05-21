@@ -13,7 +13,7 @@
       <h3 class="profile-name secondary--text text-h4 text-center">
         {{ fullName }}
       </h3>
-      <p class="profile-description gray-dark--text">
+      <p class="profile-description gray-dark--text body-1">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae similique
         expedita esse! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Quae similique expedita esse!
@@ -21,28 +21,28 @@
         <!-- Statistiques -->
         <v-row align="center" justify="center">
           <v-col cols="6">
-            <span class="primary--text font-weight-bold text-h5 mr-2">13</span>
+            <span class="secondary--text font-weight-bold text-h5 mr-2">13</span>
             <span class="gray-dark--text">Prestations</span>
           </v-col>
           <v-col cols="6">
-            <span class="primary--text font-weight-bold text-h5 mr-2">03</span>
+            <span class="secondary--text font-weight-bold text-h5 mr-2">03</span>
             <span class="gray-dark--text">Pouces orange</span>
           </v-col>
         </v-row>
         <v-row align="center" justify="center">
           <v-col cols="6">
-            <span class="primary--text font-weight-bold text-h5 mr-2">09</span>
+            <span class="secondary--text font-weight-bold text-h5 mr-2">09</span>
             <span class="gray-dark--text">Pouces bleu</span>
           </v-col>
           <v-col cols="6">
-            <span class="primary--text font-weight-bold text-h5 mr-2">01</span>
+            <span class="secondary--text font-weight-bold text-h5 mr-2">01</span>
             <span class="gray-dark--text">Pouces rouge</span>
           </v-col>
         </v-row>
 
         <v-row align="center" justify="center">
           <v-rating
-            background-color="secondary"
+            background-color="#ee957f61"
             color="primary"
             large
           />

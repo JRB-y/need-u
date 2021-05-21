@@ -2,8 +2,8 @@
   <v-container class="mt-15 mb-15 py-10">
     <v-row class="d-flex" align="center">
       <v-col sm="12" md="6">
-        <h1 class="font-weight-bold">NEED-U C'EST QUOI ?</h1>
-        <p>
+        <h1 class="font-weight-bold primary--text">NEED-U C'EST QUOI ?</h1>
+        <p class="body-1">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas porro
           assumenda optio, magni beatae eveniet necessitatibus corporis ut
           reprehenderit dolorem totam repellendus? Pariatur error doloribus
