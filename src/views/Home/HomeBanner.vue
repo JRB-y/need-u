@@ -13,9 +13,9 @@
     <v-toolbar
       elevation="0"
       color="rgba(0,0,0,0)"
-      style="position:absolute;top:75px;z-index:1; width: 100%"
+      style="position:absolute;top:75px;z-index:1; width: 100%;"
     >
-      <div style="margin: auto; width: 80%">
+      <div style="margin: auto; width: 80%;">
         <!-- Autocomplete des user (search bar) -->
         <v-autocomplete
           autofocus
