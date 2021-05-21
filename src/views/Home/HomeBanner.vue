@@ -18,6 +18,7 @@
       <div style="margin: auto; width: 80%;">
         <!-- Autocomplete des user (search bar) -->
         <v-autocomplete
+          id="search-bar"
           autofocus
           :items="users"
           solo
@@ -25,6 +26,8 @@
           :item-text="(user) => user.name.first + ' ' + user.name.last"
           append-icon="mdi-account-search"
           placeholder="Start typing to Search"
+          class="rounded-xl"
+          color="secondary"
         >
           <!-- slot pour les item dans la liste -->
           <template v-slot:item="{ item }">
@@ -35,9 +38,7 @@
               />
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title
-                v-text="item.name.first + ' ' + item.name.last"
-              ></v-list-item-title>
+              <v-list-item-title class="font-weight-bold white--text" v-text="item.name.first + ' ' + item.name.last" />
             </v-list-item-content>
           </template>
 
@@ -50,9 +51,7 @@
               />
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title
-                v-text="item.name.first + ' ' + item.name.last"
-              ></v-list-item-title>
+              <v-list-item-title class="font-weight-bold secondary--text" v-text="item.name.first + ' ' + item.name.last" />
             </v-list-item-content>
           </template>
         </v-autocomplete>
@@ -84,3 +83,20 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+header >>> .v-input__slot {
+  margin: 0 !important;
+}
+header >>> .v-text-field__details {
+  display: none !important;
+}
+
+.theme--light.v-list{
+  background: #466f6e;
+}
+
+.theme--light.v-list-item:hover:before {
+    opacity: 0.14;
+}
+</style>

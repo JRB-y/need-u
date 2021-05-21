@@ -1,93 +1,96 @@
 <template>
-  <v-layout>
+  <v-container>
+    <GoBack />
 
-    <!-- Si pas de message déjà envoyé -->
-    <v-container pt-10 v-if="!messageSended">
-      <v-row>
-        <v-col class="mb-5">
-          <h1 class="secondary--text">NOUS CONTACTER</h1>
-        </v-col>
-        <v-col mt-0 class="d-flex flex-row-reverse">
-          <v-img
-            contain
-            max-height="200"
-            max-width="200"
-            src="@/assets/images/contact/bg-contact.png"
-          >
-          </v-img>
-        </v-col>
-      </v-row>
-      <v-spacer></v-spacer>
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-textarea
-          v-model="contactMessage.message"
-          label="Votre message"
-          filled
-          value=""
-          :rules="messageRules"
-          rounded
-        ></v-textarea>
-        <v-text-field
-          v-model="contactMessage.name"
-          class="background"
-          :rules="nameRules"
-          label="Votre nom"
-          required
-          filled
-          rounded
-        />
-        <v-text-field
-          v-model="contactMessage.email"
-          :rules="emailRules"
-          label="Votre email"
-          filled
-          rounded
-          required
-        />
-        <v-select
-          v-model="contactMessage.activity"
-          :items="items"
-          :rules="[(v) => !!v || 'Item is required']"
-          label="Choisissez une activité"
-          required
-          filled
-          rounded
-        />
-        <v-row class="d-flex flex-row-reverse ma-2">
-          <v-btn
-            :class="{ disabled: !valid }"
-            color="secondary"
-            dark
-            class="mr-4"
-            @click="sendContactMessage"
-            rounded
-          >
-            ENVOYER
-          </v-btn>
+      <!-- Si pas de message déjà envoyé -->
+      <v-container pt-10 v-if="!messageSended">
+        <v-row>
+          <v-col class="mb-5">
+            <h1 class="secondary--text">NOUS CONTACTER</h1>
+          </v-col>
+          <v-col mt-0 class="d-flex flex-row-reverse">
+            <v-img
+              contain
+              max-height="200"
+              max-width="200"
+              src="@/assets/images/contact/bg-contact.png"
+            >
+            </v-img>
+          </v-col>
         </v-row>
-      </v-form>
-    </v-container>
+        <v-spacer></v-spacer>
+        <v-form ref="form" v-model="valid" lazy-validation>
+          <v-textarea
+            v-model="contactMessage.message"
+            label="Votre message"
+            filled
+            value=""
+            :rules="messageRules"
+            rounded
+          ></v-textarea>
+          <v-text-field
+            v-model="contactMessage.name"
+            class="background"
+            :rules="nameRules"
+            label="Votre nom"
+            required
+            filled
+            rounded
+          />
+          <v-text-field
+            v-model="contactMessage.email"
+            :rules="emailRules"
+            label="Votre email"
+            filled
+            rounded
+            required
+          />
+          <v-select
+            v-model="contactMessage.activity"
+            :items="items"
+            :rules="[(v) => !!v || 'Item is required']"
+            label="Choisissez une activité"
+            required
+            filled
+            rounded
+          />
+          <v-row class="d-flex flex-row-reverse ma-2">
+            <v-btn
+              :class="{ disabled: !valid }"
+              color="secondary"
+              dark
+              class="mr-4"
+              @click="sendContactMessage"
+              rounded
+            >
+              ENVOYER
+            </v-btn>
+          </v-row>
+        </v-form>
+      </v-container>
 
-    <!-- Si message est envoyé -->
-    <v-container v-else>
-      <v-col class="mb-5 text-center mt-10">
-        <h1 class="secondary--text">Votre message a été envoyé avec succès</h1>
-        <p>
-          On vous contactera très rapidement
-        </p>
-        <p>
-          l'équipe <b>Need U</b>
-        </p>
-      </v-col>
-    </v-container>
-  </v-layout>
+      <!-- Si message est envoyé -->
+      <v-container v-else>
+        <v-col class="mb-5 text-center mt-10">
+          <h1 class="secondary--text">Votre message a été envoyé avec succès</h1>
+          <p>
+            On vous contactera très rapidement
+          </p>
+          <p>
+            l'équipe <b>Need U</b>
+          </p>
+        </v-col>
+      </v-container>
+  </v-container>
 </template>
 
 
 <script>
+import GoBack from '@/components/GoBack'
+
 export default {
   name: 'Contact',
-
+  components: { GoBack },
   data: () => ({
     valid: false,
     messageRules: [

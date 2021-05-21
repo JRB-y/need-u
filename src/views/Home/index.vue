@@ -10,19 +10,20 @@
       Partie c'est quoi need U
       Ce composant il est static (n'a pas besoin de props)
     -->
-    <HomeCkoi />
 
-    <!--
-      Home activities 
-      Normalement on passe aussi les activites a partir d'une api
-    -->
-    <HomeActivities />
+      <HomeCkoi />
 
-    <!--
-      Home Randome Profile
-      List de 5 random users depuis la liste des users
-    -->
-    <HomeRandomUsers />
+      <!--
+        Home activities 
+        Normalement on passe aussi les activites a partir d'une api
+      -->
+      <HomeActivities />
+
+      <!--
+        Home Randome Profile
+        List de 5 random users depuis la liste des users
+      -->
+      <HomeRandomUsers />
   </div>
 </template>
 

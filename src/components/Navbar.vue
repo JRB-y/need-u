@@ -45,11 +45,16 @@
     <v-spacer />
 
     <v-btn icon to="/register">
-      <v-icon color="white">mdi-account</v-icon>
+      <v-icon
+        color="white"
+        v-text="'mdi-account'"
+      />
     </v-btn>
 
     <v-btn icon @click="toggleDarkMode">
-      <v-icon color="white">mdi-weather-night</v-icon>
+      <v-icon
+        color="white"
+        v-text="$vuetify.theme.dark ? 'mdi-weather-sunny' : 'mdi-weather-night'" />
     </v-btn>
 
   </v-app-bar>

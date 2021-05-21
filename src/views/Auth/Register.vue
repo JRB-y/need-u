@@ -1,23 +1,19 @@
 <template>
-  <v-layout class="mb-15">
-    <v-container>
+  <v-container class="mb-15">
+    <RegisterHeader />
 
-        <RegisterHeader />
+    <div v-if="where === NEEDE" class="register-neede">
+      <RegisterNeede />
+    </div>
 
-        <div v-if="where === NEEDE" class="register-neede">
-          <RegisterNeede />
-        </div>
+    <div v-else-if="where === NEEDEUR" class="register-needeur">
+      <RegisterNeedeur />
+    </div>
 
-        <div v-else-if="where === NEEDEUR" class="register-needeur">
-          <RegisterNeedeur />
-        </div>
-
-        <div v-else class="register-choice">
-          <RegisterChoice />
-        </div>
-
-    </v-container>
-  </v-layout>
+    <div v-else class="register-choice">
+      <RegisterChoice />
+    </div>
+  </v-container>
 </template>
 
 <script>
