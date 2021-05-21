@@ -42,6 +42,16 @@
 
     </v-toolbar-items>
 
+    <v-spacer />
+
+    <v-btn icon>
+      <v-icon color="white">mdi-account</v-icon>
+    </v-btn>
+
+    <v-btn icon @click="toggleDarkMode">
+      <v-icon color="white">mdi-weather-night</v-icon>
+    </v-btn>
+
   </v-app-bar>
 </template>
 
@@ -58,6 +68,10 @@ export default {
   methods: {
     toggleDrawer () {
       this.$store.commit('global/TOGGLE_DRAWER', !this.drawer)
+    },
+    toggleDarkMode () {
+      this.$store.commit('global/TOGGLE_DARK_MODE', !this.$vuetify.theme.dark)
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   }
 }

@@ -23,10 +23,11 @@
               :key="icon.name"
               class="mb-5 mr-3"
               elevation="0"
+              :href="icon.url"
+              target="_blank"
+              color="primary"
             >
-              <a :href="icon.url" target="_blank">
-                <v-icon size="34px">{{ icon.name }}</v-icon>
-              </a>
+              <v-icon size="34px">{{ icon.name }}</v-icon>
             </v-btn>
           </v-col>
         </v-row>
