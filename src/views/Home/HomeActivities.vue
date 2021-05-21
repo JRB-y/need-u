@@ -1,7 +1,7 @@
 <template>
-  <v-layout class="py-5" :class="{ 'grey lighten-3': !$vuetify.theme.dark }">
+  <v-layout class="py-5 grey">
     <v-container>
-      <v-row class="pb-5 pt-5 p" width>
+      <v-row class="pb-5 pt-5">
 
         <v-col sm="12" md="6" v-for="activity in activities" :key="activity.id" align="center">
           <v-img :src="activity.image" class="rounded-xl d-flex align-center" align="center" max-width="450">

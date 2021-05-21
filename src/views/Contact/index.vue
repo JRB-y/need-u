@@ -12,7 +12,7 @@
           contain
           max-height="200"
           max-width="200"
-          src="@/assets/images/bg-contact.png"
+          src="@/assets/images/contact/bg-contact.png"
         >
         </v-img>
       </v-col>

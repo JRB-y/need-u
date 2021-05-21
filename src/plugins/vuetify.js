@@ -10,11 +10,13 @@ export default new Vuetify({
         primary: '#ee957f',
         darkText: '#653b31',
         secondary: '#466F6E',
+        grey: '#dde3e6',
       },
       dark: {
         primary: '#261a17',
         darkText: '#653b31',
         secondary: '#466F6E',
+        grey: '#dde3e6',
       }
     }
   }
