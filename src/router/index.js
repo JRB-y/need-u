@@ -20,6 +20,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "actualite-show" */ '@/views/Actualite/show')
   },
   {
+    path: '/activite/:id',
+    name: 'activiteShow',
+    component: () => import(/* webpackChunkName: "activiy-show" */ '@/views/Activity/show')
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: () => import(/* webpackChunkName: "contact" */ '@/views/Contact')
@@ -27,6 +32,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   mode: 'history',
   base: process.env.BASE_URL,
   routes

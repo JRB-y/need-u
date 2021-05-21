@@ -5,7 +5,7 @@
 
         <v-col sm="12" md="6" v-for="activity in activities" :key="activity.id" align="center">
           <v-img :src="activity.image" class="rounded-xl d-flex align-center" align="center" max-width="450">
-            <v-btn class="imageBtn primary" large elevation="5" small to="/actu">{{ activity.title }}</v-btn>
+            <v-btn class="imageBtn primary" large elevation="5" small :to="`/activite/${activity.id}`">{{ activity.title }}</v-btn>
           </v-img>
         </v-col>
 
