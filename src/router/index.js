@@ -29,6 +29,11 @@ const routes = [
     name: 'contact',
     component: () => import(/* webpackChunkName: "contact" */ '@/views/Contact')
   },
+  {
+    path: '/register/:where?',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "register" */ '@/views/Auth/Register')
+  }
 ]
 
 const router = new VueRouter({

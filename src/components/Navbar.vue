@@ -44,7 +44,7 @@
 
     <v-spacer />
 
-    <v-btn icon>
+    <v-btn icon to="/register">
       <v-icon color="white">mdi-account</v-icon>
     </v-btn>
 
