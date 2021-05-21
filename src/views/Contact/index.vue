@@ -86,6 +86,8 @@
 
 <script>
 export default {
+  name: 'Contact',
+
   data: () => ({
     valid: false,
     messageRules: [
