@@ -25,6 +25,7 @@
             v-bind="attrs"
             v-on="on"
             class="white--text"
+            :to="!item.children ? item.path : ''"
           >
             {{ item.title }}
           </v-btn>

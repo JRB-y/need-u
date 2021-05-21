@@ -16,7 +16,7 @@
   },
   {
     "title": "A Propos",
-    "path": "/",
+    "path": "/about",
     "icon": "mdi-chevron-double-down",
     "children": [
       {
