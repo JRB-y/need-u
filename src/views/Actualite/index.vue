@@ -24,16 +24,20 @@
               align="center"
               :class="{ 'pa-15': !$vuetify.breakpoint.mobile }"
             >
-              <v-img :src="actualite.image" class="rounded-xl d-flex align-center" align="center">
+              <v-img
+                :src="actualite.image"
+                class="rounded-xl d-flex align-center"
+                align="center"
+              >
                 <v-overlay
                   :absolute="true"
-                  :opacity="0.5"
+                  :opacity="0.3"
                   :value="overlay"
                   style=""
                 >
-                <router-link :to="`/actualite/${actualite.id}`">
-                    <span class="white--text text-h5">{{ actualite.title }}</span>
-                </router-link>
+                  <router-link :to="`/actualite/${actualite.id}`">
+                      <span class="white--text text-h5">{{ actualite.title }}</span>
+                  </router-link>
                 </v-overlay>
               </v-img>
             </v-col>
@@ -54,8 +58,13 @@ export default {
     }
   },
   data: () => ({
-    overlay: true
+    overlay: true,
   }),
+  methods: {
+    mouseOver () {
+      console.log('HOVER')
+    }
+  }
 };
 </script>
 <style scoped>
