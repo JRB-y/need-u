@@ -11,14 +11,16 @@ export default new Vuetify({
         darkText: '#653b31',
         secondary: '#466F6E',
         grey: '#dde3e6',
-        whitesmoke: '#f5f5f5'
+        whitesmoke: '#f5f5f5',
+        'gray-dark': '#2c2c2c',
       },
       dark: {
         primary: '#ee957f',
         darkText: '#653b31',
         secondary: '#466F6E',
         grey: '#1b1c1c',
-        whitesmoke: '#f5f5f5'
+        whitesmoke: '#f5f5f5',
+        'gray-dark': '#e0e0e0',
       }
     }
   }

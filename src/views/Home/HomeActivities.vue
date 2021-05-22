@@ -1,5 +1,5 @@
 <template>
-  <v-row class="grey">
+  <v-layout class="grey">
     <v-container class="pa-10 mt-15 mb-15 grey rounded-xl">
       <v-row class="">
         <v-col sm="12" md="6" v-for="activity in activities" :key="activity.id" align="center">
@@ -13,7 +13,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-row>
+  </v-layout>
 </template>
 
 <script>

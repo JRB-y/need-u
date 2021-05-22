@@ -9,7 +9,7 @@
 
       <v-col cols="12" class="text-h4 font-weight-bold secondary--text mb-5 mt-5" v-text="activity.title" />
 
-      <v-col cols="8" class="body-1 mb-15 mx-auto" v-text="activity.description" />
+      <v-col cols="8" class="gray-dark--text body-1 mb-15 mx-auto" v-text="activity.description" />
 
     </v-row>
   </v-container>

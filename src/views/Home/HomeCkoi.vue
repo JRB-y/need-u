@@ -3,7 +3,7 @@
     <v-row class="d-flex" align="center">
       <v-col sm="12" md="6">
         <h1 class="font-weight-bold primary--text">NEED-U C'EST QUOI ?</h1>
-        <p class="body-1">
+        <p class="body-1 gray-dark--text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas porro
           assumenda optio, magni beatae eveniet necessitatibus corporis ut
           reprehenderit dolorem totam repellendus? Pariatur error doloribus
