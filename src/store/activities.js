@@ -31,6 +31,6 @@ export default {
 
   getters: {
     getActivities: state => state.activities,
-    getOne: state => (id) => state.activities.find(el => el.id === id)
+    getOne: state => (id) => state.activities.find(el => el.id === id),
   },
 }

@@ -95,7 +95,7 @@ export default {
     valid: false,
     messageRules: [
       (v) => !!v || "Le messsage est obligatoire",
-      (v) => (v && v.length <= 10) || "Le message doit avoir au minimum 10 caractères",
+      (v) => !v || v.length >= 10 || "Le message doit avoir au minimum 10 caractères",
     ],
     nameRules: [
       (v) => !!v || "Le nom est obligatoire",

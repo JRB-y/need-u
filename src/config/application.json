@@ -1,5 +1,5 @@
 {
-  "name": "NEED U",
+  "name": "Wajih",
 
   "shortDescription": "Lorem ipsum dolor sit amet",
 
@@ -20,5 +20,11 @@
       "name": "mdi-instagram",
       "url": "https://www.instagram.com/"
     }
+  ],
+
+  "footerLinks": [
+    { "name": "FAQ", "path": "/faq" },
+    { "name": "Mentions légales", "path": "/mentions-legales" },
+    { "name": "Politques de confidentialité", "path": "/politique-confidentialite" }
   ]
 }

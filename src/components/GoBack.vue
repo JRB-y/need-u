@@ -13,6 +13,7 @@
     </v-toolbar>
   </v-row>
 </template>
+
 <script>
 export default {
   name: 'GoBack',

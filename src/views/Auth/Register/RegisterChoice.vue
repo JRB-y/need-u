@@ -31,10 +31,13 @@ export default {
         case 'neede':
           this.$router.push('/register/needé')
           break;
+
         case 'needeur':
           this.$router.push('/register/needeur')
           break;
+
         default:
+
           break;
       }
     }

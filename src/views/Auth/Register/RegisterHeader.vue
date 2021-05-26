@@ -3,12 +3,7 @@
     <GoBack />
     <v-row class="text-center" justify="center" align="center">
       
-      <v-col cols="3">
-        <!-- <v-btn icon text>
-          <v-icon @click="$router.go(-1)">mdi-arrow-left</v-icon>
-        </v-btn> -->
-        
-      </v-col>
+      <v-col cols="3" />
 
       <v-col cols="6" class="text-center inscription-title secondary--text font-weight-bold text-h5">
         INSCRIPTION

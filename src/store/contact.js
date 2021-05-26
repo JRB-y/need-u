@@ -12,6 +12,7 @@ export default {
 
   actions: {
     async sendMessage (context, contactMessage) {
+      // TODO: save in API
       context.commit('SET_MESSAGE', contactMessage)
       return { success: true }
     }

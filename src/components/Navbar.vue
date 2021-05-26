@@ -44,12 +44,19 @@
 
     <v-spacer />
 
-    <v-btn icon to="/register">
-      <v-icon
-        color="white"
-        v-text="'mdi-account'"
-      />
-    </v-btn>
+
+    <v-menu offset-y :close-on-click="true" :close-on-content-click="false" v-model="authMenu" class="rounded-xl">
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-on="on" v-bind="attrs">
+          <v-icon
+            color="white"
+            v-text="'mdi-account'"
+          />
+        </v-btn>
+      </template>
+      <AuthComponent />
+    </v-menu>
+
 
     <v-btn icon @click="toggleDarkMode">
       <v-icon
@@ -61,14 +68,17 @@
 </template>
 
 <script>
+import AuthComponent from '@/views/Auth'
 import menuItems from '@/config/menu.json'
 import { name } from '@/config/application.json'
 
 export default {
   name: 'Navbar',
+  components: { AuthComponent },
   data: () => ({
     appTitle: name,
     menuItems,
+    authMenu: false,
   }),
   methods: {
     toggleDrawer () {
@@ -82,6 +92,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .v-menu__content {
+    box-shadow: unset;
+  }
 </style>

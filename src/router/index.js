@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,8 +31,24 @@ const routes = [
   {
     path: '/register/:where?',
     name: 'register',
-    component: () => import(/* webpackChunkName: "register" */ '@/views/Auth/Register')
-  }
+    component: () => import(/* webpackChunkName: "register" */ '@/views/Auth/Register/Register')
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: () => import(/* webpackChunkName: "faq" */ '@/views/StaticViews/Faq')
+  },
+  {
+    path: '/mentions-legales',
+    name: 'mentionsLegales',
+    component: () => import(/* webpackChunkName: "mentions-legales" */ '@/views/StaticViews/MentionsLegales')
+  },
+  {
+    path: '/politique-confidentialite',
+    name: 'politiqueConfidentialite',
+    component: () => import(/* webpackChunkName: "politique-confidentialite" */ '@/views/StaticViews/PolitiqueConfidentialite')
+  },
+  
 ]
 
 const router = new VueRouter({

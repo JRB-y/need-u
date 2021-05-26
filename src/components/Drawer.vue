@@ -26,7 +26,7 @@
         v-for="item in menuItems"
         :key="item.title"
         link
-        :to="!item.childre ? item.path : ''"
+        :to="!item.children ? item.path : ''"
       >
         <v-list-item-icon>
           <v-icon color="white">{{ item.icon }}</v-icon>

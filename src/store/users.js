@@ -16,7 +16,6 @@ export default {
 
   actions: {
     async getUsers(context) {
-      console.log('DISAPTCH USERs')
       const response = await fetch('https://randomuser.me/api/?results=50&inc=email,id,name,picture')
       const result = await response.json()
       context.commit('SET_USERS', result.results)

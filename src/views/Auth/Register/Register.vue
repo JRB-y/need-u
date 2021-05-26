@@ -1,5 +1,6 @@
 <template>
   <v-container class="mb-15">
+
     <RegisterHeader />
 
     <div v-if="where === NEEDE" class="register-neede">

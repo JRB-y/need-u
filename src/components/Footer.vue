@@ -34,19 +34,22 @@
         </v-row>
       </v-card-title>
 
-      <v-card-text class="py-2 white--text text-center primary white--text">
-        {{ new Date().getFullYear() }} — <strong>Copyright © by wajih </strong>
+      <v-card-text class="py-2 white--text primary text-center white--text">
+        {{ new Date().getFullYear() }} <strong>Copyright © by wajih </strong>
+        <br>
+        <v-btn v-for="(link, index) in footerLinks" :key="index" :to="link.path" text small>{{ link.name }}</v-btn>
       </v-card-text>
     </v-card>
   </v-footer>
 </template>
 
 <script>
-import { social } from '@/config/application.json'
+import { social, footerLinks } from '@/config/application.json'
 
 export default {
   data: () => ({
     icons: social,
+    footerLinks,
   }),
 };
 </script>
