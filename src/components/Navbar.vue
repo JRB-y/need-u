@@ -54,7 +54,8 @@
           />
         </v-btn>
       </template>
-      <AuthComponent />
+      <AuthComponent v-if="!isLogged" />
+      <LoggedMenu v-else/>
     </v-menu>
 
 
@@ -69,12 +70,13 @@
 
 <script>
 import AuthComponent from '@/views/Auth'
+import LoggedMenu from '@/components/LoggedMenu'
 import menuItems from '@/config/menu.json'
 import { name } from '@/config/application.json'
 
 export default {
   name: 'Navbar',
-  components: { AuthComponent },
+  components: { AuthComponent, LoggedMenu },
   data: () => ({
     appTitle: name,
     menuItems,
@@ -87,6 +89,11 @@ export default {
     toggleDarkMode () {
       this.$store.commit('global/TOGGLE_DARK_MODE', !this.$vuetify.theme.dark)
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    }
+  },
+  computed: {
+    isLogged () {
+      return this.$store.getters['auth/isLogged']
     }
   }
 }

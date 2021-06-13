@@ -15,6 +15,15 @@
     </v-main>
 
     <Footer />
+
+    <v-snackbar
+      v-model="snackbar.show"
+      timeout="8000"
+      :color="snackbar.color"
+      :top="true"
+    >
+      {{ snackbar.text }}
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -30,6 +39,11 @@ export default {
     // App.vue est le composant parent donc il se mount 1 fois quand on refresh la page
     // Au premier refresh je récupere la valeur du dark depuis le store et je l'affect a vuetify
     this.$vuetify.theme.dark = this.$store.getters['global/getDarkValue']
+  },
+  computed: {
+    snackbar () {
+      return this.$store.getters['global/getSnackbar']
+    }
   }
 }
 </script>

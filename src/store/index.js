@@ -8,11 +8,12 @@ import global from './global'
 import contact from './contact'
 import actualites from './actualites'
 import activities from './activities'
+import auth from './auth'
 
 Vue.use(Vuex)
 
 const dataState = createPersistedState({
-  paths: ['global']
+  paths: ['global', 'auth']
 })
 
 export default new Vuex.Store({
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     contact,
     actualites,
     activities,
+    auth,
   },
   plugins: [dataState]
 })

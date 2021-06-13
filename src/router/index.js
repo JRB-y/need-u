@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -48,7 +50,14 @@ const routes = [
     name: 'politiqueConfidentialite',
     component: () => import(/* webpackChunkName: "politique-confidentialite" */ '@/views/StaticViews/PolitiqueConfidentialite')
   },
-  
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard'),
+    meta: {
+      auth: true
+    }
+  }
 ]
 
 const router = new VueRouter({
@@ -58,6 +67,21 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const { auth } = to.meta
+  
+  if (auth) {
+    const userIsLogged = store.getters['auth/isLogged']
+    if (!userIsLogged) {
+      // redirect to index
+      next({ path: '/' })
+    }
+
+  }
+
+  next()
 })
 
 export default router

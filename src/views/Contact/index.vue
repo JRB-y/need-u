@@ -54,17 +54,29 @@
             filled
             rounded
           />
-          <v-row class="d-flex flex-row-reverse ma-2">
-            <v-btn
-              :class="{ disabled: !valid }"
-              color="secondary"
-              dark
-              class="mr-4"
-              @click="sendContactMessage"
-              rounded
-            >
-              ENVOYER
-            </v-btn>
+          <v-row class="d-flex ">
+            <v-col sm="10">
+              <v-file-input
+                multiple
+                label="File input"
+                chips
+                v-model="contactMessage.attachements"
+                hint=""
+              ></v-file-input>
+              <p class="gray-dark--text">Vous pouvez sélectionnez plusieurs fichiers simultanément</p>
+            </v-col>
+            <v-col sm="2">
+              <v-btn
+                :class="{ disabled: !valid }"
+                color="secondary"
+                dark
+                class="mr-4 mt-3"
+                @click="sendContactMessage"
+                rounded
+              >
+                ENVOYER
+              </v-btn>
+            </v-col>
           </v-row>
         </v-form>
       </v-container>
@@ -109,7 +121,8 @@ export default {
       message: null,
       name: null,
       email: null,
-      activity: null
+      activity: null,
+      attachements: [],
     },
     items: [
       "loisir et détente",

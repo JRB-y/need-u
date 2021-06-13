@@ -1,5 +1,5 @@
 const NEEDE = 'needé'
-const NEEDEUR = 'needeur'
+const NEEDEUR = 'needer'
 
 export default {
   NEEDE,

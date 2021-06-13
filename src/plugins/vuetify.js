@@ -14,6 +14,7 @@ export default new Vuetify({
         grey: '#dde3e6',
         whitesmoke: '#f5f5f5',
         'gray-dark': '#2c2c2c',
+        'secondary-text': '#5c5f6e',
       },
       dark: {
         primary: '#ee957f',
@@ -23,6 +24,7 @@ export default new Vuetify({
         grey: '#1b1c1c',
         whitesmoke: '#f5f5f5',
         'gray-dark': '#e0e0e0',
+        'secondary-text': '#5c5f6e',
       }
     }
   }
