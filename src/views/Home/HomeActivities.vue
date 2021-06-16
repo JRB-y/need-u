@@ -17,10 +17,11 @@
 </template>
 
 <script>
+// TODO: WE NEED TO LOAD THE ACTIVITY IMAGE FROM DB !
 export default {
   name: 'HomeActivities',
-  mounted () {
-    console.log('AMOUUU')
+  async mounted () {
+    await this.$store.dispatch('activities/getAllActivities')
   },
   computed: {
     activities () {

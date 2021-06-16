@@ -14,6 +14,16 @@
     <div v-else class="register-choice">
       <RegisterChoice />
     </div>
+
+    <v-row>
+      <v-col sm="12" md="6" class="offset-md-3">
+        <v-divider class="my-5 mt-15"/>
+        <div class="d-flex flex-column text-center">
+          <span text>Vous avez un compte ?</span>
+          <v-btn text class="secondary" to="/login">Connexion</v-btn>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

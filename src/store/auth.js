@@ -1,3 +1,5 @@
+import axios from '@/config/axios'
+
 export default {
   namespaced: true,
 
@@ -22,15 +24,20 @@ export default {
   },
 
   actions: {
-    async login (context, user) {
-      const { email, password } = user
-      if (email === 'wajih@gmail.com' && password === '12345678') {
-        const token = 'abcabcabctoken'
-        context.commit('SET_TOKEN', token)
-        return { success: true, data: token }
-      } else {
-        return { success: false, reason: 'Invalid credentials' }
-      }
+    async login () {
+      // const response = Axios.post('http://localhost:3000/api/auth/login')
+      // const { email, password } = user
+      // if (email === 'wajih@gmail.com' && password === '12345678') {
+      //   const token = 'abcabcabctoken'
+      //   context.commit('SET_TOKEN', token)
+      //   return { success: true, data: token }
+      // } else {
+      //   return { success: false, reason: 'Invalid credentials' }
+      // }
+    },
+    async register (context, user) {
+      const response = await axios.post('auth/register', user)
+      return response
     }
   }
 }
