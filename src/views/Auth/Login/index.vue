@@ -22,7 +22,6 @@
               autocomplete="new-password"
             />
 
-
             <v-btn rounded block class="primary" @click="login">
               <v-icon size="60" large>mdi-check</v-icon>
             </v-btn>
@@ -57,7 +56,7 @@ export default {
     async login () {
       const loginResponse = await this.$store.dispatch('auth/login', this.user)
       if (!loginResponse.success) {
-        this.$store.commit('global/SHOW_SNACKBAR', { show: true, color: 'red', text: `Erreur d'authentification` })
+        this.$store.commit('global/SHOW_SNACKBAR', { show: true, type: "error", color: 'red', text: `Erreur d'authentification` })
       } else {
         this.$router.push('/dashboard')
         // redirection !!!!!

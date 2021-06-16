@@ -19,7 +19,7 @@
     <v-snackbar
       v-model="snackbar.show"
       timeout="8000"
-      :color="snackbar.color"
+      :color="snackbar.type === 'error' ? 'secondary' : 'primary'"
       :top="true"
     >
       {{ snackbar.text }}

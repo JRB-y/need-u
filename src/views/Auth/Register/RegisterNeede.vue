@@ -185,8 +185,8 @@
       <v-row>
         <v-col align="center">
           <v-btn
-            :class="{ disabled: !valid }"
-            color="secondary"
+            :class="{ disabled: !valid, 'submit-button': true }"
+            color="primary"
             dark
             class="mr-4 mt-3"
             @click="save"
@@ -243,14 +243,14 @@ export default {
         await this.$store.dispatch('auth/register', this.user)
         const snackbar = {
           text: 'Inscription avec success',
-          color: 'green',
+          type: 'success',
         }
         this.$store.commit('global/SHOW_SNACKBAR', snackbar)
         // this.$router.push('/')
       } catch (error) {
         const snackbar = {
           text: error.response.data.reason,
-          color: 'red',
+          type: 'error',
         }
         this.$store.commit('global/SHOW_SNACKBAR', snackbar)
       }
