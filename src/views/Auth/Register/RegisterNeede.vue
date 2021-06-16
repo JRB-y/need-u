@@ -145,6 +145,7 @@
             rounded
             v-model="user.password"
             :rules="[(v) => !!v || 'Le nom est requis']"
+            autocomplete="new-password"
           />
         </v-col>
       </v-row>
