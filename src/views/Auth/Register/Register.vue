@@ -15,7 +15,7 @@
       <RegisterChoice />
     </div>
 
-    <v-row v-if="where === ''">
+    <v-row v-if="where === undefined">
       <v-col sm="12" md="6" class="offset-md-3">
         <v-divider class="my-5 mt-15"/>
         <div class="d-flex flex-column text-center">

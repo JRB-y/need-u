@@ -1,4 +1,4 @@
-import axios from '@/config/axios'
+import axiosInstance from '@/config/axios'
 
 export default {
   namespaced: true,
@@ -6,10 +6,13 @@ export default {
   state: {
     token: null,
     isLogged: false,
+    currentUser: null,
   },
 
   getters: {
     isLogged: state => state.isLogged,
+    getToken: state => state.token,
+    getCurrentUser: state => state.currentUser,
   },
 
   mutations: {
@@ -17,26 +20,38 @@ export default {
       state.token = token
       state.isLogged = true
     },
+    SET_USER(state, user) {
+      state.currentUser = user
+    },
     REMOVE_TOKEN (state) {
       state.token = null
       state.isLogged = false
+      state.userLoggedIn = null
     }
   },
 
   actions: {
-    async login () {
-      // const response = Axios.post('http://localhost:3000/api/auth/login')
-      // const { email, password } = user
-      // if (email === 'wajih@gmail.com' && password === '12345678') {
-      //   const token = 'abcabcabctoken'
-      //   context.commit('SET_TOKEN', token)
-      //   return { success: true, data: token }
-      // } else {
-      //   return { success: false, reason: 'Invalid credentials' }
-      // }
+    async register(context, user) {
+      const response = await axiosInstance.post('auth/register', user)
+      return response
     },
-    async register (context, user) {
-      const response = await axios.post('auth/register', user)
+
+    async login (context, user) {
+      const response = await axiosInstance.post('auth/login', user)
+      if (response.success === false) {
+        throw new Error(response.reason)
+      }
+      console.log('LOGIN', response)
+      context.commit('SET_TOKEN', response.data.token)
+      context.commit('SET_USER', response.data.user)
+    },
+
+    async me (context, id) {
+      const response = await axiosInstance.get(`auth/me/${id}`)
+      console.log('response', response)
+      if (response.success) {
+        context.commit('SET_USER', response.data)
+      }
       return response
     }
   }

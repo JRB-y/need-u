@@ -32,7 +32,7 @@
             :rules="[(v) => !!v || 'Le nom est requis']"
           />
         </v-col>
-        <v-col sm="12" >
+        <v-col sm="12" md="6">
           <v-text-field
             :label="`âge`.toUpperCase()"
             placeholder="Ex: Toto"
@@ -40,30 +40,35 @@
             filled
             rounded
             v-model="user.age"
-            :rules="[(v) => !!v || 'Item is required']"
+            :rules="[(v) => !!v || `L'âge est obligatoire`]"
           />
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col sm="12" md="6">
+          <v-radio-group
+            row
+            v-model="user.gender"
+            :rules="[(v) => !!v || 'Le nom est requis']"
+          >
+            <v-radio
+              label="Homme"
+              value="h"
+            />
+            <v-radio
+              label="Femme"
+              value="f"
+            />
+            <v-radio
+              label="Autre"
+              value="a"
+            />
+          </v-radio-group>
+
         </v-col>
       </v-row>
 
       <v-row justify="center">
-        <v-radio-group
-          row
-          v-model="user.gender"
-          :rules="[(v) => !!v || 'Le nom est requis']"
-        >
-          <v-radio
-            label="Homme"
-            value="h"
-          />
-          <v-radio
-            label="Femme"
-            value="f"
-          />
-          <v-radio
-            label="Autre"
-            value="a"
-          />
-        </v-radio-group>
+        
       </v-row>
 
 
@@ -84,13 +89,25 @@
       <v-row>
         <v-col>
           <v-text-field
+            label="ADRESSE"
+            placeholder="Ex: 57, Rue Pierre Mauroy"
+            required
+            filled
+            rounded
+            v-model="user.addr"
+            :rules="[(v) => !!v || `L'adresse est obligatoire`]"
+          />
+        </v-col>
+
+        <v-col>
+          <v-text-field
             label="VILLE"
-            placeholder="Ex: clara.baill@gmail.com"
+            placeholder="Ex: Paris ..."
             required
             filled
             rounded
             v-model="user.city"
-            :rules="[(v) => !!v || 'Le nom est requis']"
+            :rules="[(v) => !!v || 'La ville est obligatoire']"
           />
         </v-col>
 
@@ -226,6 +243,7 @@ export default {
         gender: null,
         email: null,
         password: null,
+        addr: null,
         city: null,
         zip: null,
         presentation: null,
@@ -246,7 +264,7 @@ export default {
           type: 'success',
         }
         this.$store.commit('global/SHOW_SNACKBAR', snackbar)
-        // this.$router.push('/')
+        this.$router.push('/login')
       } catch (error) {
         const snackbar = {
           text: error.response.data.reason,

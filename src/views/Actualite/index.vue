@@ -93,9 +93,6 @@ export default {
     tab: 1,
   }),
   methods: {
-    mouseOver () {
-      console.log('HOVER')
-    },
     changeTab (value) {
       this.tab = value
     },

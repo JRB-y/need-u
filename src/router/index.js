@@ -33,12 +33,18 @@ const routes = [
   {
     path: '/register/:where?',
     name: 'register',
-    component: () => import(/* webpackChunkName: "register" */ '@/views/Auth/Register/Register')
+    component: () => import(/* webpackChunkName: "register" */ '@/views/Auth/Register/Register'),
+    meta: {
+      guest: true
+    },
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/Auth/Login')
+    component: () => import(/* webpackChunkName: "login" */ '@/views/Auth/Login'),
+    meta: {
+      guest: true
+    },
   },
   {
     path: '/faq',
@@ -56,9 +62,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "politique-confidentialite" */ '@/views/StaticViews/PolitiqueConfidentialite')
   },
   {
+    path: '/a-propos',
+    name: 'apropos',
+    component: () => import(/* webpackChunkName: "a-propos" */ '@/views/StaticViews/APropos')
+  },
+  {
     path: '/dashboard',
     name: 'dashboard',
     component: () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import(/* webpackChunkName: "account" */ '@/views/Profile'),
     meta: {
       auth: true
     }
@@ -75,15 +94,21 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const { auth } = to.meta
+  const { auth, guest } = to.meta
   
+  const userIsLogged = store.getters['auth/isLogged']
   if (auth) {
-    const userIsLogged = store.getters['auth/isLogged']
     if (!userIsLogged) {
       // redirect to index
       next({ path: '/' })
     }
+  }
 
+  if (guest) {
+    if (userIsLogged) {
+      // redirect to index
+      next({ path: '/profile' })
+    }
   }
 
   next()

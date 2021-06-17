@@ -6,7 +6,7 @@ export default {
     snackbar: {
       show: false,
       text: null,
-      color: 'red',
+      type: ''
     },
   },
   getters: {

@@ -1,7 +1,12 @@
 <template>
-  <v-container class="mt-15 mb-15 py-10">
+  <v-container >
+    <h1 class="secondary--text text-center mt-3 mb-3">QUI SOMMES NOUS?</h1>
+    <v-row class="text-center">
+      <v-img src="@/assets/images/apropos/apropos.webp" height="800" contain> </v-img>
+    </v-row>
+
     <v-row class="d-flex" align="center">
-      <v-col sm="12" md="6" align="center">
+      <v-col sm="12" md="12" align="center">
         <v-container>
           <v-row>
             <v-col>
@@ -10,20 +15,21 @@
             </v-col>
           </v-row>
 
-          <v-row>
+          <v-row  align="center" justify="center"> 
             <v-col sm="4">
               <h2 class="secondary--text">{{ NEEDEUR.toUpperCase() }}</h2>
-              <p class="secondary-text--text" :class="{ 'text-right': !$vuetify.breakpoint.smOnly }">
+              <p class="text-right secondary-text--text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
                 Sed, esse ab quis sequi dolorem
               </p>
             </v-col>
-            <v-col sm="4" >
-              <v-img src="@/assets/images/apropos/c-quoi.webp" style="height: 200px" contain/>
+            <v-col sm="4">
+              <!-- TODO: relace image -->
+              <v-img src="@/assets/images/apropos/c-quoi.webp"/>
             </v-col>
             <v-col sm="4">
               <h2 class="primary--text">{{ NEEDE.toUpperCase() }}</h2>
-              <p class="secondary-text--text" :class="{ 'text-left': !$vuetify.breakpoint.smOnly }">
+              <p class="text-left secondary-text--text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
                 Sed, esse ab quis sequi dolorem
               </p>
@@ -45,29 +51,22 @@
           </v-btn>
         </v-row>
       </v-col>
-
-      <v-col sm="12" md="6" align="center">
-        <v-img
-          contain
-          max-height="300"
-          max-width="400"
-          src="../../assets/images/quoi.webp"
-        />
-      </v-col>
     </v-row>
+ 
+
   </v-container>
 </template>
 
 <script>
-import vars from '@/config/vars'
+import vars from "@/config/vars";
 
 export default {
-  name: 'HomeCKoi',
-  data () {
+  name: "APropos",
+  data() {
     return {
       NEEDEUR: vars.NEEDEUR,
-      NEEDE: vars.NEEDE
-    }
-  }
-}
+      NEEDE: vars.NEEDE,
+    };
+  },
+};
 </script>

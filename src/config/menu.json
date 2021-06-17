@@ -10,25 +10,25 @@
     "icon": "mdi-newspaper"
   },
   {
-    "title": "Contact",
-    "path": "/contact",
-    "icon": "mdi-phone"
-  },
-  {
     "title": "A Propos",
-    "path": "/about",
+    "path": "",
     "icon": "mdi-chevron-double-down",
     "children": [
       {
         "title": "Qui somme nous ?",
-        "path": "/",
+        "path": "/a-propos",
         "icon": ""
       },
       {
-        "title": "Blog",
+        "title": "Team",
         "path": "/",
         "icon": ""
       }
     ]
+  },
+  {
+    "title": "Contact",
+    "path": "/contact",
+    "icon": "mdi-phone"
   }
 ]

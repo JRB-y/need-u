@@ -10,13 +10,13 @@ import actualites from './actualites'
 import activities from './activities'
 import auth from './auth'
 
-Vue.use(Vuex)
-
 const dataState = createPersistedState({
   paths: ['global', 'auth']
 })
 
-export default new Vuex.Store({
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
   modules: {
     users,
     global,
@@ -27,3 +27,5 @@ export default new Vuex.Store({
   },
   plugins: [dataState]
 })
+
+export default store

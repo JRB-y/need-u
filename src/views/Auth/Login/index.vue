@@ -54,14 +54,12 @@ export default {
   },
   methods: {
     async login () {
-      const loginResponse = await this.$store.dispatch('auth/login', this.user)
-      if (!loginResponse.success) {
-        this.$store.commit('global/SHOW_SNACKBAR', { show: true, type: "error", color: 'red', text: `Erreur d'authentification` })
-      } else {
-        this.$router.push('/dashboard')
-        // redirection !!!!!
+      try {
+        await this.$store.dispatch('auth/login', this.user)
+        this.$router.push('/profile')
+      } catch (error) {
+        this.$store.commit('global/SHOW_SNACKBAR', { show: true, type: "error", text: error.response.data.reason })
       }
-      
     }
   }
 }

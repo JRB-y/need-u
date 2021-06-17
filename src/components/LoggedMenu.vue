@@ -1,8 +1,8 @@
 <template>
   <v-card class="grey" elevation="0">
     <v-list>
-      <v-list-item link>
-        <v-list-item-title v-text="'Profil'" />
+      <v-list-item link :to="{ name: 'profile' }">
+        <v-list-item-title v-text="'Mon Profil'"  />
       </v-list-item>
       <v-list-item link @click="logout">
         <v-list-item-title v-text="'Déconnexion'" />

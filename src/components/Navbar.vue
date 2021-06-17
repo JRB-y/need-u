@@ -9,7 +9,7 @@
 
     <v-toolbar-title class="mr-5">
       <router-link to="/" tag="span" style="cursor: pointer" class="white--text">
-        {{ appTitle }}
+        <v-img :src="require('@/assets/images/need-u-logo.png')" height="65" width="65"/>
       </router-link>
     </v-toolbar-title>
 
@@ -34,8 +34,10 @@
           <v-list-item
             v-for="(child, j) in item.children"
             :key="j"
+            link
+            :to="child.path"
           >
-            <v-list-item-title to="/">{{ child.title }}</v-list-item-title>
+            <v-list-item-title >{{ child.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -45,7 +47,7 @@
     <v-spacer />
 
 
-    <v-menu offset-y :close-on-click="true" :close-on-content-click="false" v-model="authMenu" class="rounded-xl">
+    <v-menu offset-y :close-on-click="true" :close-on-content-click="true" v-model="authMenu" class="rounded-xl">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-on="on" v-bind="attrs">
           <v-icon
